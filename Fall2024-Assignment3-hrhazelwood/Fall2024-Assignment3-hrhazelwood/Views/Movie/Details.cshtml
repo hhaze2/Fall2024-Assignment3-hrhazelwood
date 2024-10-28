@@ -1,0 +1,110 @@
+@model Fall2024_Assignment3_hrhazelwood.Models.MovieDetailsViewModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Movie</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Movie.Title)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Movie.Title)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Movie.ImdbLink)
+        </dt>
+        <dd class="col-sm-10">
+            @*@Html.DisplayFor(model => model.Movie.ImdbLink)*@
+            @if (Model.Movie.ImdbLink != null)
+            {
+                <a href="@Model.Movie.ImdbLink" target="_blank">@Model.Movie.ImdbLink</a>
+            }
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Movie.Genre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Movie.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Movie.ReleaseYear)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Movie.ReleaseYear)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Movie.Media)
+        </dt>
+        <dd class="col-sm-10">
+            @if (Model.Movie.Media != null)
+            {
+                <img src="@Url.Action("GetMoviePhoto", "Movie", new { Model.Movie.Id })" width="200" height="200" />
+            }
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Movie.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+<h5>Actors</h5>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Actors)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Actors)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @*<a asp-action="Edit" asp-controller="Actor" asp-route-id="@item.Id">Edit</a> |*@
+                    <a asp-action="Details" asp-controller="Actor" asp-route-id="@item.Id">Details</a> |
+                    @*<a asp-action="Delete" asp-controller="Actor" asp-route-id="@item.Id">Delete</a>*@
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<h5>Reviews</h5>
+<h6>Overall Sentiment: </h6>
+<h6>@Html.DisplayFor(model => model.OverallSentiment)</h6>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Reviews)
+            </th>
+            <th>Review Sentiment</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model.Reviews != null)
+        {
+            for (int i = 0; i < Model.Reviews.Length; i++)
+            {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => model.Reviews[i])
+                </td>
+                <td>
+                    @Html.DisplayFor(model => model.ReviewSentiment[i])
+                </td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>

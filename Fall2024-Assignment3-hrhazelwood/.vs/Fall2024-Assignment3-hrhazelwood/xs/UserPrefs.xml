@@ -1,0 +1,50 @@
+﻿<Properties StartupConfiguration="{B61BE7C8-CBA2-4936-9F1E-9EB22C7FF081}|https">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.Fall2024-Assignment3-hrhazelwood PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Fall2024-Assignment3-hrhazelwood/Controllers/MovieController.cs">
+    <Files>
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Views/Shared/_Layout.cshtml" Line="51" Column="32" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Controllers/MovieController.cs" Line="121" Column="49" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Controllers/ActorController.cs" Line="174" Column="14" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Models/Actor.cs" Line="18" Column="3" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Views/Movie/Details.cshtml" Line="101" Column="21" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Views/Actor/Details.cshtml" Line="121" Column="2" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Views/Movie/Create.cshtml" Line="1" Column="1" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Views/MovieActor/Create.cshtml" Line="1" Column="1" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Models/Movie.cs" Line="10" Column="57" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Views/Home/Index.cshtml" Line="13" Column="5" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/wwwroot/css/site.css" Line="24" Column="18" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Views/Actor/Edit.cshtml" Line="18" Column="59" />
+      <File FileName="Fall2024-Assignment3-hrhazelwood/Views/Movie/Edit.cshtml" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Fall2024-Assignment3-hrhazelwood" expanded="True">
+            <Node name="Fall2024-Assignment3-hrhazelwood" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="MovieController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Views" expanded="True">
+                <Node name="Actor" expanded="True" />
+                <Node name="Home" expanded="True" />
+                <Node name="Movie" expanded="True" />
+                <Node name="MovieActor" expanded="True" />
+                <Node name="Shared" expanded="True" />
+              </Node>
+              <Node name="wwwroot" expanded="True">
+                <Node name="css" expanded="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
