@@ -44,7 +44,7 @@
         <dd class="col-sm-10">
             @if (Model.Movie.Media != null)
             {
-                <img src="@Url.Action("GetMoviePhoto", "Movie", new { Model.Movie.Id })" width="200" height="200" />
+                <img id="poster" src="@Url.Action("GetMoviePhoto", "Movie", new { Model.Movie.Id })"/>
             }
         </dd>
     </dl>
@@ -53,8 +53,9 @@
     <a asp-action="Edit" asp-route-id="@Model?.Movie.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
 </div>
-<h5>Actors</h5>
-<table class="table">
+<hr />
+<h5 id="header">Actors</h5>
+<table class="datatables">
     <thead>
         <tr>
             <th>
@@ -79,10 +80,11 @@
         }
     </tbody>
 </table>
-<h5>Reviews</h5>
-<h6>Overall Sentiment: </h6>
-<h6>@Html.DisplayFor(model => model.OverallSentiment)</h6>
-<table class="table">
+<hr />
+<h5 id="header">Reviews</h5>
+<h6 id="sentiment">Overall Sentiment: @Html.DisplayFor(model => model.OverallSentiment)</h6>
+@*<h6>@Html.DisplayFor(model => model.OverallSentiment)</h6>*@
+<table class="datatables">
     <thead>
         <tr>
             <th>
@@ -92,19 +94,32 @@
         </tr>
     </thead>
     <tbody>
-        @if(Model.Reviews != null)
+        @if (Model.Reviews != null)
         {
             for (int i = 0; i < Model.Reviews.Length; i++)
             {
-            <tr>
-                <td>
-                    @Html.DisplayFor(model => model.Reviews[i])
-                </td>
-                <td>
-                    @Html.DisplayFor(model => model.ReviewSentiment[i])
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => model.Reviews[i])
+                    </td>
+                    <td>
+                        @Html.DisplayFor(model => model.ReviewSentiment[i])
+                    </td>
+                </tr>
             }
         }
     </tbody>
 </table>
+
+@section Scripts {
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css"
+          integrity="sha384-5oFfLntNy8kuC2TaebWZbaHTqdh3Q+7PwYbB490gupK0YtTAB7mBJGv4bQl9g9rK"
+          crossorigin="anonymous">
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"
+            integrity="sha384-k5vbMeKHbxEZ0AEBTSdR7UjAgWCcUfrS8c0c5b2AfIh7olfhNkyCZYwOfzOQhauK"
+            crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"
+            integrity="sha384-PgPBH0hy6DTJwu7pTf6bkRqPlf/+pjUBExpr/eIfzszlGYFlF9Wi9VTAJODPhgCO"
+            crossorigin="anonymous"></script>
+    <script>$('table.datatables').DataTable();</script>
+}

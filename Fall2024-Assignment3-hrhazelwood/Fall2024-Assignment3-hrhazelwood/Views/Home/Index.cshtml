@@ -9,12 +9,19 @@
         <div id="actions">
             <img id="movieImage" src="https://cdn-icons-png.flaticon.com/512/4831/4831192.png" />
             <img id="actorImage" src="https://cdn-icons-png.flaticon.com/512/475/475283.png" />
-            <img id="movieActorImage" src="https://cdn-icons-png.flaticon.com/512/9104/9104916.png"/>
+            <img id="movieActorImage" src="https://cdn-icons-png.flaticon.com/512/9104/9104916.png" />
         </div>
-        <div id="labels">
-            <h3>&nbsp;&nbsp;&nbsp;&nbsp;View Movies</h3>
-            <h3>&nbsp;&nbsp;View Actors</h3>
-            <h3>View Actor/Movie</h3>
+        <div id="indexLabels">
+            <a id="homePageButton" asp-action="Index" asp-controller="Movie">&nbsp;&nbsp;&nbsp;View Movies</a>
+            <a id="homePageButton" asp-action="Index" asp-controller="Actor">&nbsp;&nbsp;View Actors</a>
+            <a id="homePageButton" asp-action="Index" asp-controller="MovieActor">View Actor/Movie</a>
+            
+        </div>
+        <div id="createLabels">
+            <a id="homePageButton" asp-action="Create" asp-controller="Movie">&nbsp;&nbsp;&nbsp;&nbsp;Create Movies</a>
+            <a id="homePageButton" asp-action="Create" asp-controller="Actor">&nbsp;&nbsp;Create Actors</a>
+            <a id="homePageButton" asp-action="Create" asp-controller="MovieActor">Create Actor/Movie</a>
+            
         </div>
     </div>
     <div id="disclaimer">

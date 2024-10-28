@@ -185,14 +185,14 @@ namespace Fall2024_Assignment3_hrhazelwood.Controllers
             {
                 try
                 {
-                    //same issue as in movie with resetting the photo, technically if they hit back to list it wont reset but i dont trust the users
-                    //if (photo != null && photo.Length > 0)
-                    //{
-                    //    using var memoryStream = new MemoryStream();
-                    //    photo.CopyTo(memoryStream);
-                    //    actor.Photo = memoryStream.ToArray();
-                    //}
                     
+                    if (photo != null && photo.Length > 0)
+                    {
+                        using var memoryStream = new MemoryStream();
+                        photo.CopyTo(memoryStream);
+                        actor.Photo = memoryStream.ToArray();
+                    }
+
                     _context.Update(actor);
                     await _context.SaveChangesAsync();
                 }

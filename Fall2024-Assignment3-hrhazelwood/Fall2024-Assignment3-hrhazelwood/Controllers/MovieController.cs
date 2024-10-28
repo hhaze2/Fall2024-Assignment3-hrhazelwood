@@ -186,13 +186,13 @@ namespace Fall2024_Assignment3_hrhazelwood.Controllers
             {
                 try
                 {
-                    //causing issue where saving and not readding the file will reset the photo and cause the pic to be blank because its saving teh no file chosen
-                    //if (media != null && media.Length > 0)
-                    //{
-                    //    using var memoryStream = new MemoryStream();
-                    //    media.CopyTo(memoryStream);
-                    //    movie.Media = memoryStream.ToArray();
-                    //}
+
+                    if (media != null && media.Length > 0)
+                    {
+                        using var memoryStream = new MemoryStream();
+                        media.CopyTo(memoryStream);
+                        movie.Media = memoryStream.ToArray();
+                    }
                     _context.Update(movie);
                     await _context.SaveChangesAsync();
                 }
