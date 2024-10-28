@@ -24,9 +24,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.ReleaseYear)
             </th>
-            @*<th>
+            <th>
                 @Html.DisplayNameFor(model => model.Media)
-            </th>*@
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -48,9 +48,13 @@
             <td>
                 @Html.DisplayFor(modelItem => item.ReleaseYear)
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Media)
-            </td>*@
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Media)*@
+                @if (item.Media != null)
+                {
+                    <img id="poster" src="@Url.Action("GetMoviePhoto", "Movie", new { item.Id })" width="184" height="283"/>
+                }
+            </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |

@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Fall2024-Assignment3-hrhazelwood")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+43d0a63db829c33aa6d124e19c896dcaef08c154")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+89389eb5dddabafbc93c31cf7d04f11c565a6335")]
 [assembly: System.Reflection.AssemblyProductAttribute("Fall2024-Assignment3-hrhazelwood")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Fall2024-Assignment3-hrhazelwood")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

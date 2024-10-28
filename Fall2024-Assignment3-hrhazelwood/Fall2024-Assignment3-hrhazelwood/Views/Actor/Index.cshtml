@@ -21,9 +21,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.ImdbLink)
             </th>
-            @*<th>
+            <th>
                 @Html.DisplayNameFor(model => model.Photo)
-            </th>*@
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -42,9 +42,14 @@
                     <a href="@item.ImdbLink" target="_blank">@item.ImdbLink</a>
                 }
             </td>
-            @*<td>
-                @Html.DisplayFor(modelItem => item.Photo)
-            </td>*@
+            <td>
+                @*@Html.DisplayFor(modelItem => item.Photo)*@
+                @if (item.Photo != null)
+                {
+
+                    <img src="@Url.Action("GetActorPhoto", "Actor", new { item.Id })" width="194" height="259"/>
+                }
+            </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
