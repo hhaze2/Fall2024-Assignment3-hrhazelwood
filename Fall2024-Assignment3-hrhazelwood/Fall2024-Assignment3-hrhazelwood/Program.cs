@@ -1,14 +1,26 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Fall2024_Assignment3_hrhazelwood.Data;
+using Microsoft.Data.SqlClient;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+//var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+string configConnectionString = builder.Configuration.GetConnectionString("DefaultConnection")
+                    ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+var conStrBuilder = new SqlConnectionStringBuilder(configConnectionString);
+conStrBuilder.Password = builder.Configuration["DbPassword"];
+string connectionString = conStrBuilder.ConnectionString;
+
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
-    options.UseSqlite(connectionString));
+    options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+
+//builder.Services.AddDbContext<ApplicationDbContext>(options =>
+//    options.UseSqlite(connectionString));
+//builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<ApplicationDbContext>();

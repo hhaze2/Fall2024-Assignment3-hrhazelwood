@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/hannahhazelwood/cs330/Assignments/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj": {}
+    "/Users/hannahhazelwood/cs330/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj": {}
   },
   "projects": {
-    "/Users/hannahhazelwood/cs330/Assignments/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj": {
+    "/Users/hannahhazelwood/cs330/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/hannahhazelwood/cs330/Assignments/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
+        "projectUniqueName": "/Users/hannahhazelwood/cs330/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
         "projectName": "Fall2024-Assignment3-hrhazelwood",
-        "projectPath": "/Users/hannahhazelwood/cs330/Assignments/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
+        "projectPath": "/Users/hannahhazelwood/cs330/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
         "packagesPath": "/Users/hannahhazelwood/.nuget/packages/",
-        "outputPath": "/Users/hannahhazelwood/cs330/Assignments/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/obj/",
+        "outputPath": "/Users/hannahhazelwood/cs330/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/hannahhazelwood/.nuget/NuGet/NuGet.Config"
@@ -32,6 +32,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {

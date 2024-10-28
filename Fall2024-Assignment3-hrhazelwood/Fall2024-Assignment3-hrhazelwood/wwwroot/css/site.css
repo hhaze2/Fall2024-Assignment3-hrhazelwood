@@ -1,6 +1,6 @@
 ﻿html {
   font-size: 14px;
-  font-family: fantasy;
+  font-family: sans-serif;
 }
 
 @media (min-width: 768px) {
@@ -27,6 +27,27 @@ body {
 #movieImage, #actorImage, #movieActorImage {
     width: 25%;
     height: 25%;
+}
+
+#labels, #actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 34px;
+    border: 1px solid black;
+    padding: 0 14px;
+}
+
+#disclaimer {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 0 175px;
+    flex-direction: column;
+   
+    
+    
 }
 
 

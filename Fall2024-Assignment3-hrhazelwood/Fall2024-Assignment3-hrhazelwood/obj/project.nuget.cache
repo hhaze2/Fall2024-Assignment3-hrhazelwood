@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4yMHZ7Rk4QzGvNIN7Uiqh+0EeHecuhY0Jw03ayh9rjRd0qPWPcJ31Wrjj82uKRtT4HNm1f0/vgd9kfkFljuDow==",
+  "dgSpecHash": "nPwuX0ZYWAA=",
   "success": true,
-  "projectFilePath": "/Users/hannahhazelwood/cs330/Assignments/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
+  "projectFilePath": "/Users/hannahhazelwood/cs330/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
   "expectedPackageFiles": [
     "/Users/hannahhazelwood/.nuget/packages/azure.ai.openai/2.0.0/azure.ai.openai.2.0.0.nupkg.sha512",
     "/Users/hannahhazelwood/.nuget/packages/azure.core/1.43.0/azure.core.1.43.0.nupkg.sha512",

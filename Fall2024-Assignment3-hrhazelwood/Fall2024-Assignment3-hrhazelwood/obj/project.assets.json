@@ -8923,11 +8923,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/hannahhazelwood/cs330/Assignments/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
+      "projectUniqueName": "/Users/hannahhazelwood/cs330/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
       "projectName": "Fall2024-Assignment3-hrhazelwood",
-      "projectPath": "/Users/hannahhazelwood/cs330/Assignments/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
+      "projectPath": "/Users/hannahhazelwood/cs330/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood.csproj",
       "packagesPath": "/Users/hannahhazelwood/.nuget/packages/",
-      "outputPath": "/Users/hannahhazelwood/cs330/Assignments/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/obj/",
+      "outputPath": "/Users/hannahhazelwood/cs330/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/Fall2024-Assignment3-hrhazelwood/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/hannahhazelwood/.nuget/NuGet/NuGet.Config"
