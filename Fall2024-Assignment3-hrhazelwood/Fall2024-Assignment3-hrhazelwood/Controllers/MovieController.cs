@@ -82,35 +82,49 @@ namespace Fall2024_Assignment3_hrhazelwood.Controllers
             ChatClient client = new AzureOpenAIClient(new Uri(ApiEndpoint), ApiCredential).GetChatClient(AiDeployment);
 
             string[] personas = { "is harsh", "loves romance", "loves comedy", "loves thrillers", "loves fantasy", "loves classics", "is a social activist", "loves symbolism", "is a casual viewer", "is an intellectual" };
+            //var messages = new ChatMessage[]
+            //{
+            //        new SystemChatMessage($"You represent a group of {personas.Length} film critics who have the following personalities: {string.Join(",", personas)}. When you receive a question, respond as each member of the group. Each response must be separated by a '|'. Do not say which member you are. Do not list your member number. Each response must be separated by a '|'."),
+            //        new UserChatMessage($"How would you rate the movie {movie.Title} released in {movie.ReleaseYear} out of 10 in 150 words or less?")
+            //};
             var messages = new ChatMessage[]
             {
-                    new SystemChatMessage($"You represent a group of {personas.Length} film critics who have the following personalities: {string.Join(",", personas)}. When you receive a question, respond as each member of the group. Each response must be separated by a '|'. Do not say which member you are. Do not list your member number. Each response must be separated by a '|'."),
-                    new UserChatMessage($"How would you rate the movie {movie.Title} released in {movie.ReleaseYear} out of 10 in 150 words or less?")
+                    new SystemChatMessage($"You are a film critic. You are either harsh, a lover of comedy, a lover of romance, a lover of thrillers, a lover of fantasy, a lover of classics, a social activist, a lover of symbolism, a casual viewer, or an intellectual. Generate an answer with a valid JSON formatted array of objects containing the review. The response should start with [."),
+                    new UserChatMessage($"Generate 10 movie reviews, each based on one of your possible personas and less than 75 words long. Rate the movie {movie.Title} released in {movie.ReleaseYear} out of 10 and make the review structure varied. Your response should start with [.")
             };
             ClientResult<ChatCompletion> result = await client.CompleteChatAsync(messages);
-            string[] reviews = result.Value.Content[0].Text.Split('|').Select(s => s.Trim()).ToArray();
-            int reviewLength = reviews.Length;
-
-            //foreach (var review in reviews)
-            //{
-            //    Console.WriteLine("REVIEW");
-            //    Console.WriteLine(review);
-            //}
-
-            //Console.WriteLine("RAW RESULT");
-            //Console.WriteLine(result.Value.Content[0].Text);
+            //string[] reviews = result.Value.Content[0].Text.Split('|').Select(s => s.Trim()).ToArray();
+            //int reviewLength = reviews.Length;
+            string reviewsJsonString = result.Value.Content.FirstOrDefault()?.Text ?? "[]";
+            Console.WriteLine(reviewsJsonString);
+            JsonArray json = JsonNode.Parse(reviewsJsonString)!.AsArray();
 
             var analyzer = new SentimentIntensityAnalyzer();
             double sentimentTotal = 0;
 
-            string[] sentiments = new string[reviewLength];
-            for (int i = 0; i < reviews.Length; i++)
+            var reviews = json.Select(t => new { Review = t!["review"]?.ToString() ?? "", Rating = t!["rating"]?.ToString() ?? "" }).ToArray();
+            string[] stringReviews = { "", "", "", "", "", "", "", "", "", ""};
+
+            string[] sentiments = new string[stringReviews.Length];
+            int i = 0;
+            foreach (var review in reviews)
             {
-                string review = reviews[i];
-                SentimentAnalysisResults sentiment = analyzer.PolarityScores(review);
+                if (i >= 10)
+                {
+                    break;
+                }
+                SentimentAnalysisResults sentiment = analyzer.PolarityScores(review.Review);
                 sentimentTotal += sentiment.Compound;
 
+                stringReviews[i] = review.Review;
+                if (review.Rating != "")
+                {
+                    stringReviews[i] = stringReviews[i] + " Rating: " + review.Rating + "/10.";
+                }
+                   
                 sentiments[i] = sentiment.Compound.ToString();
+                i++;
+                
 
             }
             //movie.ReviewSentiment = sentiments;
@@ -118,7 +132,7 @@ namespace Fall2024_Assignment3_hrhazelwood.Controllers
             double sentimentAverage = sentimentTotal / reviews.Length;
             //movie.OverallSentiment = sentimentAverage.ToString();
 
-            var vm = new MovieDetailsViewModel(movie, actors, reviews, sentiments, sentimentAverage.ToString());
+            var vm = new MovieDetailsViewModel(movie, actors, stringReviews, sentiments, sentimentAverage.ToString());
 
             return View(vm);
         }

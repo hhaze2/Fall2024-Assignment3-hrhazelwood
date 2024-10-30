@@ -33,6 +33,10 @@ namespace Fall2024_Assignment3_hrhazelwood.Migrations
                     b.Property<int>("Age")
                         .HasColumnType("int");
 
+                    b.Property<string>("Gender")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ImdbLink")
                         .HasColumnType("nvarchar(max)");
 

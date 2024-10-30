@@ -134,7 +134,7 @@ namespace Fall2024_Assignment3_hrhazelwood.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Age,ImdbLink")] Actor actor, IFormFile? photo)
+        public async Task<IActionResult> Create([Bind("Id,Name,Gender,Age,ImdbLink")] Actor actor, IFormFile? photo)
         {
             if (ModelState.IsValid)
             {
@@ -174,7 +174,7 @@ namespace Fall2024_Assignment3_hrhazelwood.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Tweets,TweetSentiment,OverallSentiment,Name,Age,ImdbLink")] Actor actor, IFormFile? photo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Tweets,TweetSentiment,OverallSentiment,Name,Gender,Age,ImdbLink")] Actor actor, IFormFile? photo)
         {
             if (id != actor.Id)
             {
